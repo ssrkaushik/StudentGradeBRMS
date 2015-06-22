@@ -7,6 +7,13 @@
   <version>1.0</version>
   <packaging>kjar</packaging>
   <name>StudentGrade</name>
+  <dependencies>
+    <dependency>
+      <groupId>com.grade</groupId>
+      <artifactId>gradejar</artifactId>
+      <version>1</version>
+    </dependency>
+  </dependencies>
   <repositories>
     <repository>
       <id>guvnor-m2-repo</id>

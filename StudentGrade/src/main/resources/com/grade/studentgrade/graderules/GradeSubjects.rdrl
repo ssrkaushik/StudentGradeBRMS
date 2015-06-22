@@ -1,9 +1,21 @@
 package com.grade.studentgrade.graderules;
 
 import java.lang.Number;
+import com.grade.RulesExecutionContext;
+import com.grade.RulesExecutionResponse;
+import com.grade.StudentGradesDto;
+import com.grade.StudentMarksDto;
 
 rule "GradeSubjects"
 	dialect "mvel"
 	when
+		context : RulesExecutionContext( )
+		StudentMarksDto( english > 90B || english < 100B || maths > 90B || maths < 100B )
 	then
+		StudentGradesDto gradesDto = new StudentGradesDto();
+		gradesDto.setEnglishGrade( "A" );
+		gradesDto.setMathsGrade( "A" );
+		insert( gradesDto );
+		context.setOutPutObject( gradesDto );
+		System.out.println("Rule GradeSubjects 90 - 100 Executed");
 end

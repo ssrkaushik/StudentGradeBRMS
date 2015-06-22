@@ -1,0 +1,9 @@
+package com.grade.studentgrade.graderules;
+
+import java.lang.Number;
+
+rule "GradeSubjects"
+	dialect "mvel"
+	when
+	then
+end
